@@ -1,0 +1,37 @@
+extends layout
+block container
+    .contenido-principal
+        h1 #{nombre} - #{proyecto.nombre}
+
+        // formulario tarea
+        if errors
+            each error in errors
+                .alerta #{error.texto}
+        form.agregar-tarea(action=`/proyectos/${proyecto.url}` method="POST")
+            .campo
+                label(for="tarea") Tarea:
+                input.nombre-tarea(type="text" name="tarea" placeholder="Nombre de tarea")
+            .campo-enviar
+                input.boton.nueva-tarea(type="submit" value="Agregar")
+        .listado-pendientes
+            ul
+                if (tareas.length)
+                    each tarea in tareas
+                        li.tarea(data-tarea=tarea.id)
+                            p= tarea.dataValues.tarea
+                            .acciones
+                                if (tarea.dataValues.estado)
+                                    i.far.fa-check-circle.completo
+                                else 
+                                    i.far.fa-check-circle
+                                i.fas.fa-trash
+                else
+                    p No hay tareas
+        .avance 
+            h2 Avance del proyecto
+            #barra-avance.barra-avance
+                #porcentaje.porcentaje
+        // acciones sobre el proyecto
+        .contenedor-acciones
+            a(href=`/proyecto/editar/${proyecto.id}` class="boton") Editar Proyecto
+            button#eliminar-proyecto(data-proyectoUrl=proyecto.url type="button" class="boton eliminar") Eliminar Proyecto 

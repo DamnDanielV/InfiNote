@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        include partials/head
+    body.login
+        .contenedor-formulario 
+            h1 Inicia sesión en InfiNote 
+            //- if error
+            //-     p.alerta.error= error
+            //- mostrar mensaje de contraseña reestablecida
+            if locals.errores
+                .alertas
+                    each categoria in Object.keys(locals.errores)
+                        each error in errores[categoria]
+                            .alerta(class=`${categoria}`)
+                                p= error 
+            form#formulario.caja.caja-login(method="POST"  action="/iniciarSesion")
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" name="email" placeholder="Tu email" value= email)
+                .campo 
+                    label(for="password") Password: 
+                    input(type="password" name="password" placeholder="Tu Password" value= password)
+                .campo.enviar
+                    input.boton(type="submit" value="Iniciar sesión")
+                .campo.acciones
+                    a(href="/usuarios/crear") ¿Aún no tienes una cuenta? Crea una gratis
+                    a(href="/reestablecer") ¿Olvidaste tu contraseña?
+

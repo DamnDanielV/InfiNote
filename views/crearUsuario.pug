@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        include partials/head
+    body.login
+        .contenedor-formulario 
+            h1 Crea tu cuenta en InfiNote
+            if locals.errores
+                .alertas
+                    each categoria in Object.keys(locals.errores)
+                        each error in errores[categoria]
+                            .alerta(class=`${categoria}`)
+                                p= error 
+
+            form#formulario.caja.caja-login(method="POST"  action="/usuarios/crear")
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" name="email" placeholder="Tu email" value= email)
+                .campo 
+                    label(for="password") Password: 
+                    input(type="password" name="password" placeholder="Tu Password" value= password)
+                .campo.enviar
+                    input.boton(type="submit" value="Crear cuenta")
+                .campo
+                    a(href="/iniciarSesion") Volver a iniciar sesion
+        script(src="/dist/bundle.js")  
