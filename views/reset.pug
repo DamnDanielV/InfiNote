@@ -1,21 +1,32 @@
 doctype html
 html(lang="en")
-    include partials/head
-    body.login
-        .contenedor-formulario
-            h1= nombre
-            if locals.errores
-                .alertas
-                    each categoria in Object.keys(locals.errores)
-                        each error in errores[categoria]
-                            .alerta(class=`${categoria}`)
-                                p= error 
-            p Indica tu E-mail
-            form.caja-login(method="POST" action="/reestablecer")
-                .campo
-                    label(for="email") E-mail:
-                    input(type="email" name="email" placeholder="Tu email" value= email)
-                .campo.enviar
-                    input.boton(type="submit" value="Reestablecer")
-                .campo.acciones
-                    a(href="/iniciarSesion") Volver a login
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/form.css")
+
+    body
+        section
+            .color
+            .color
+            .color
+            .box
+
+                .container
+                    .form
+                        h2= nombre 
+                        if locals.errores
+                            .alertas
+                                each categoria in Object.keys(locals.errores)
+                                    each error in errores[categoria]
+                                        .alerta(class=`${categoria}`)
+                                            p= error 
+                        form(method="POST" action="/reestablecer")
+                            .inputBox
+                                input(type="email" name="email" placeholder="Tu email" value= email)
+                            .inputBox
+                                input(type="submit" value="Reestablecer")
+
+                            p.forget ¿La recordaste? 
+                                a(href="/iniciarSesion") Volver a login

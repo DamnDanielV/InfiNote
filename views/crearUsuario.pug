@@ -1,26 +1,33 @@
 doctype html
 html(lang="en")
     head
-        include partials/head
-    body.login
-        .contenedor-formulario 
-            h1 Crea tu cuenta en InfiNote
-            if locals.errores
-                .alertas
-                    each categoria in Object.keys(locals.errores)
-                        each error in errores[categoria]
-                            .alerta(class=`${categoria}`)
-                                p= error 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/form.css")
 
-            form#formulario.caja.caja-login(method="POST"  action="/usuarios/crear")
-                .campo
-                    label(for="email") E-mail:
-                    input(type="email" name="email" placeholder="Tu email" value= email)
-                .campo 
-                    label(for="password") Password: 
-                    input(type="password" name="password" placeholder="Tu Password" value= password)
-                .campo.enviar
-                    input.boton(type="submit" value="Crear cuenta")
-                .campo
-                    a(href="/iniciarSesion") Volver a iniciar sesion
-        script(src="/dist/bundle.js")  
+    body
+        section
+            .color
+            .color
+            .color
+            .box
+
+                .container
+                    .form
+                        h2 Crea tu cuenta en InfiNote
+                        if locals.errores
+                            .alertas
+                                each categoria in Object.keys(locals.errores)
+                                    each error in errores[categoria]
+                                        .alerta(class=`${categoria}`)
+                                            p= error 
+                        form(method="POST"  action="/usuarios/crear")
+                            .inputBox
+                                input(type="email" name="email" placeholder="Tu email" value= email)
+                            .inputBox
+                                input(type="password" name="password" placeholder="Tu Password" value= password)
+                            .inputBox
+                                input(type="submit" value="Crear cuenta")
+                            p.forget ¿Volver a iniciar sesión? 
+                                a(href="/iniciarSesion") Click Aquí
