@@ -1,4 +1,17 @@
 extends layout
 block container
     .contenido-principal
-        h1 helllloooolo
+        h1 Tareas pendientes
+        .row.row-cols-1.row-cols-md-3.g-4
+            if (proyectos.length)
+                each proyecto in proyectos
+                    
+                    if (tareas.length)
+                        each tarea in tareas
+                            if(tarea.proyectoId == proyecto.id)
+                                .col
+                                    .card.h-100
+                                        .card-body
+                                            h5.card-title= proyecto.nombre
+                                            p.card-text= tarea.tarea
+           

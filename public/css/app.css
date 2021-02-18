@@ -7,11 +7,38 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
+    overflow: hidden;
 }
-/** Login **/
-.login,
-.crear-cuenta {
-    background: #455A64;
+
+section {
+    background: linear-gradient(to bottom, #3d3e41, #4c5257);
+}
+section .color {
+    position: absolute;
+    filter: blur(150px)
+}
+section .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #ff359b;
+}
+section .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #87ff9b;
+}
+section .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+}
+.box {
+    position: relative;
 }
 .contenedor-formulario {
     display: flex;
@@ -31,18 +58,6 @@ body {
     text-align: center;
     color: white;
     font-size: 1.4rem;
-}
-.caja-login {
-    background-color: #F2F2F2;
-    border: 1px solid #707070;
-    max-width: 650px;
-    width: 90%;
-    margin: 0 auto;
-    min-height: 300px;
-    -webkit-box-shadow: 0px 25px 35px -17px rgba(0,0,0,0.56);
-    -moz-box-shadow: 0px 25px 35px -17px rgba(0,0,0,0.56);
-    box-shadow: 0px 25px 35px -17px rgba(0,0,0,0.56);
-    padding: 3rem;
 }
 .campo {
     display: flex;
@@ -81,6 +96,7 @@ body {
     font-weight: 900;
     width: 250px;
     margin:0  auto;
+    border-radius: 15px;
 
     display: flex;
     align-items: center;
@@ -131,7 +147,7 @@ body.index {
 .contenedor-proyectos {
     height: 100%;
     max-width: 300px;
-    background-color: #607D8B;
+    background-color: #23292c;
     padding-top: 1rem;
 }
 .panel {
@@ -182,6 +198,7 @@ body.index {
 .contenido-principal h1,
 .contenido-principal h2 {
     text-align: center;
+    color: ivory;
 }
 .contenido-principal h1 {
     font-size: 1.8rem;
@@ -196,21 +213,28 @@ body.index {
 .agregar-tarea {
     max-width: 800px;
     width: 90%;
-    background-color: #607D8B;
+    background-color: #23292c;
     margin: 0 auto;
     padding: 2rem;
     color: white;
     transition: background-color .5s ease-in-out;
+    border-radius: 30px;
 }
 
 /** Listado Pendientes **/
 .listado-pendientes {
-    background-color: #F2F2F2;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+
     max-width: 800px;
     width: 90%;
     margin: 2rem auto 0 auto;
     padding: 2rem;
-    border: 1px solid #999;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    
 }
 .listado-pendientes ul {
     padding: 0;
@@ -283,11 +307,12 @@ body.index {
 form.agregar-proyecto {
     max-width: 800px;
     width: 90%;
-    background-color: #607D8B;
+    background-color: #23292c;
     margin: 0 auto;
     padding: 2rem;
     color: white;
     transition: background-color .5s ease-in-out;
+    border-radius: 30px;
 }
 form.agregar-proyecto label,
 form.agregar-proyecto input {

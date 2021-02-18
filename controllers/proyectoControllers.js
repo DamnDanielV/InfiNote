@@ -8,9 +8,15 @@ exports.homeController = async (req, res) => {
         where:
         { usuarioId }
     });
+    const tareas = await Tarea.findAll({
+        where: {
+            estado: false
+        }
+    })
     res.render('index.pug',{
         nombre: "Uptask",
-        proyectos
+        proyectos,
+        tareas
     }) // renderiza el archivo .pug indicado en la linea 10 de index.js
 }
 

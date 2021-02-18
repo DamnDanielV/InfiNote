@@ -3,22 +3,37 @@ html(lang="en")
     head
         include partials/head
     body
-        header.barra
-            h1 InfiNote - Administrador de tareas #{fecha}
-            a(href="/cerrarSesion") Cerrar Sesión 
-        main.contenedor 
-            aside.contenedor-proyectos 
-                .panel.crear-proyecto
-                    a(href="/nuevo-proyecto" class="boton") Nuevo Proyecto
-                .panel.lista-proyectos
-                    ul#proyectos.proyectos
-                        h2 Proyectos
-                        hr
-                        if (proyectos.length)
-                            each proyecto in proyectos
-                                li
-                                    a(href=`/proyectos/${proyecto.url}`) #{proyecto.nombre}
+        section
+            .color
+            .color
+            .color
+            .box
+                nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         
-            block container
-            //- pre= vardump(proyectos)
-        script(src="/dist/bundle.js") 
+                    .container-fluid
+                        a(href="/").navbar-brand InfiNote
+                        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                            span.navbar-toggler-icon
+                        #navbarSupportedContent.collapse.navbar-collapse
+                            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                                li.nav-item
+                                    a.nav-link.active(aria-current='page' href='/') Home
+                                li.nav-item
+                                    a.nav-link(href='/cerrarSesion') Cerrar Sesion
+                main.contenedor 
+                    aside.contenedor-proyectos 
+                        .panel.crear-proyecto
+                            a(href="/nuevo-proyecto" class="boton") Nuevo Proyecto
+                        .panel.lista-proyectos
+                            ul#proyectos.proyectos
+                                h2 Proyectos
+                                hr
+                                if (proyectos.length)
+                                    each proyecto in proyectos
+                                        li
+                                            a(href=`/proyectos/${proyecto.url}`) #{proyecto.nombre}
+                
+                    block container
+                    //- pre= vardump(proyectos)
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+                script(src="/dist/bundle.js") 
