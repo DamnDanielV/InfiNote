@@ -37,4 +37,8 @@ InfiNote en rasgos generales es un administrador de tareas de facil uso, en el c
 entre otras...
 
 ## Echa un vistaso a como luce:
+    http://infinote-v1.herokuapp.com/
 
+    credenciales:
+        email: usuariotest@correo.com
+        password: 123456
