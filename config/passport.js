@@ -33,6 +33,12 @@ passport.use(new LocalStrategy(
                     })
                 }
             }
+            else {
+                console.log("no existe el usuario")
+                return done(null, false, {
+                    message: 'Usuario no existe'
+                })
+            }
         } catch (error) {
             //no esxiste el usuario
             console.log('no existe el usuuuuuarioooo')
