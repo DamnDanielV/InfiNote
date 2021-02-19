@@ -36,7 +36,7 @@ InfiNote en rasgos generales es un administrador de tareas de facil uso, en el c
 
 entre otras...
 
-## Echa un vistaso a como luce:
+## Echa un vistazo a como luce:
     http://infinote-v1.herokuapp.com/
 
     credenciales:
