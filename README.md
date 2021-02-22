@@ -1,21 +1,18 @@
 # InfiNote
 
-InfiNote en rasgos generales es un administrador de tareas de facil uso, en el cual un usuario puede agregar proyectos y tareas en cada uno de estos, el estado de cada una de las tareas puede ser indicado y esto automaticamente indicará el progreso del proyecto por medio de una barra de estado.
+> InfiNote in general features is an easy-to-use task manager, in which a user can add projects and tasks in each of these, the status of each of the tasks can be indicated and this will automatically indicate the progress of the project through of a status bar.
 
-## Caracterizticas adicionales
+## Features
 
-- Envio de email para confirmar cuenta, resetear password...
-- Configuracion de variables de entorno para despliegue en Heroku
-- Encriptacion de datos sensibles del usuario
+- Sending email to confirm account, reset password ...
+- Encryption of sensitive user data
 
 
-## Herramientas usadas en este proyecto:
-
-### Backend y Base de datos
+### Backend and DataBase
     - NodeJs
     - MySql
     - ORM: Sequelize
-    - Seguridad: Passport
+    - Security: Passport
 
 
 ### Frontend
@@ -23,22 +20,22 @@ InfiNote en rasgos generales es un administrador de tareas de facil uso, en el c
     - Bootstrap
     - CSS Effects
 
-### Algunas dependencias NPM usadas
-- axios
-- bcrypt
-- connect-flash
-- express
-- mysql
-- passport
-- pug
-- sequelize
-- cookie-parser
+### Some npm dependencies used
+    - axios
+    - bcrypt
+    - connect-flash
+    - express
+    - mysql
+    - passport
+    - pug
+    - sequelize
+    - cookie-parser
 
-entre otras...
+    and so on...
 
-## Echa un vistazo a como luce:
+## take a look:
     http://infinote-v1.herokuapp.com/
 
-    credenciales:
+    credentials:
         email: usuariotest@correo.com
         password: 123456
